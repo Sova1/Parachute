@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link href="css/rocker.css" rel="stylesheet">
+	<script type="text/javascript" src="http://yandex.st/jquery/2.1.1/jquery.min.js"></script>
+
+	<!--script type='text/javascript' src='js/jquery.mystique 3.7.1.js'></script-->
+	<script src="js/rocker.js"></script>
+
+	<script type="text/javascript" src="js/scroll.js"></script>
+	<script type="text/javascript" src="js/jquery.reveal.js"></script>
+	
+	<script type="text/javascript" src="arcticmodal/arcticmodal.js"></script>
+	<link href="arcticmodal/arcticmodal.css" rel="stylesheet">
+	<link href="arcticmodal/themes/dark.css" rel="stylesheet">
+	
+	<script src="js/jwplayer.js" ></script>
+	<script>jwplayer.key="D1yYirCtzuFQjy74+sQ5YBvBR7ANfO25C2Zu9Q==";</script>
+	<script type="text/javascript">
+$(document).ready(function(){
+  var currentPosition = 0;
+  var slideWidth = 560;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('.reviews')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+</script>
+
+
+
+</head>
+
+<body>
+
+	<ul id="scene" class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" style=" -webkit-transform: translate3d(0, 0, 0); -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden;">
+ <li class="layer" data-depth="0.15" style="position: absolute; display: block; height: 392px; width: 251px; left: 0px; top: 0px; -webkit-transform: translate3d(0.4464285714285717%, -2.234098939929327%, 0px); -webkit-transform-style: preserve-3d; -webkit-backface-visibility: hidden;">
+  <ul class="rope depth-10">
+   <li class="hanger position-5">
+    <div class="board cloud-4 swing-1"></div>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+<div class="wrapper">
+
+	<header class="header">
+		<div class="had_wrap">
+			<div class="logo"><a href="#"><img src="images/logo.png"></a></div>
+
+			<div class="phone">
+				<p><b style="font-size:18px; font-family:tahoma;">+7 916 186 98 88</b></p>
+			</div>
+
+			<a href="#blok4"><button class="button_call" onclick="yaCounter25650857.reachGoal('CALL'); return true;">Заказать звонок</button></a>
+
+			<nav class="had_nav"> 
+				<ul>
+					<li><a href="#blok6">Услуги</a></li>
+					<li><a href="#blok7">Галерея</a></li>
+					<li><a href="#blok8">Видео</a></li>
+					<li><a href="#blok9">Отзывы</a></li>
+					<li><a href="#blok10">Контакты</a></li>
+				</ul>
+			</nav>
+
+
+		</div>
+	</header><!-- .header-->
+	<div class="empty"></div>
+
+	<main class="content">
+		<article class="blok">
+			<div class="bg_bottom"></div>
+			
+		</article>
+
+		<article class="blok2">
+			<div class="wrap">
+				<div class="jumping">
+					<span class="jump">Прыжки</span><br />
+					<span class="chute">с парашютом в тандеме с высоты 4000 метров</span><br />
+					<span class="gift">Подари себе и близким</span><br />
+					<span class="feel">заряд эмоций на всю жизнь</span>
+				</div>
+			</div>
+
+
+			
+		</article>
+			<div class="bg_bottom2"></div>
+
+		<article class="blok3">
+			<div class="wrap">
+			<div class="glow">
+				<span class="big">Тандем</span><br />
+				<span class="average">прыжок</span><br />
+				<a href="/" class="small">подробнее</a>	
+			</div>
+			<div class="wrap_glow">
+				<h1>Сертификат <br />на прыжок с 4000 метров!</h1>
+			</div>
+			<div class="text">
+				<p>
+					<br>
+					Надоело ползать, хотите летать? Что Вам для этого нужно? Инструктор, парашют и конечно же небеса! Прыжок в тандеме - невероятный способ ощутить невесомость и парить в небе, как птица. Летайте с нами!
+				</p>
+                <ul>
+                	<li>высота 4000 м + опытный инструктор</li>
+                	<li>стоимость <span class="red">6100 руб.</span> </li>
+                	<li>без фото и видео съемки</li>
+                	<li>срок действия: 6 месяцев</li>
+                </ul>
+
+                <div class="footnote">
+                	
+                	<button class="button_buy" onclick="yaCounter25650857.reachGoal('BUY_CERTIFICATE'); return true;" style="z-index:100! important;">Купить сертификат!</button>
+                </div>
+ 				
+			</div>
+			</div>	
+		</article>
+			<div class="bg_bottom3"></div>
+
+		<article class="blok4" id="blok4">
+			<div class="wrap">
+			<h1>С нами просто!</h1>
+			<div class="form">
+				<div class="blue">
+					<p>Бесплатный трансфер</p>
+					<p>до аэродрома и обратно</p>
+				</div>
+				<div class="text_blue">
+					<p style="font-size:22px;line-height:42px;">Закажите 3 прыжка с парашютом, и мы <span class="red">доставим всю вашу дружную компанию на аэродром бесплатно!</span></p>
+				</div>
+
+				<div class="timer">
+					<!-- <p>До окончания акции осталось:</p>
+					 <div class="timer_bg"> 
+						<div class="dash weeks_dash">
+					        <span class="dash_title">дней</span>
+					        <div class="digit">0</div>
+					        <div class="digit">0</div>
+					    </div>
+					 
+					    <div class="dash days_dash">
+					        <span class="dash_title">часов</span>
+					        <div class="digit">0</div>
+					        <div class="digit">0</div>
+					    </div>
+					 
+					    <div class="dash hours_dash">
+					        <span class="dash_title">минут</span>
+					        <div class="digit">0</div>
+					        <div class="digit">0</div>
+					    </div>
+					 
+					    <div class="dash minutes_dash">
+					        <span class="dash_title">секунд</span>
+					        <div class="digit">0</div>
+					        <div class="digit">0</div>
+					    </div>
+				 	</div>-->
+				
+
+				</div>
+
+				<div class="right" style="z-index:60 !important;">
+					<div class="form_bar" style="display:block;position:relative;z-index:100;">
+						<form action="" method="post" >
+							<h2>Оставьте заявку</h2>
+							<hr>
+							<p>оставьте заявку и получите консультацию специалиста</p><br /><br />
+							<label for="text">Ваше имя</label>
+							<input type="text" id="text" name="name">
+ 							<label for="phone">Телефон</label>
+ 							<input type="text" id="phone" name="phone">
+ 							<input type="button"  value="Получить консультацию" class="button3" onclick="yaCounter25650857.reachGoal('CONSULTATION'); return true;" value="Получить консультацию" >
+						</form>
+					</div>
+				</div>
+<script type="text/javascript">
+
+$('.button3').click(function(){
+
+	
+	
+	name = $('[name=name]').val()
+	phone = $('[name=phone]').val()
+	
+	data = {
+		'name' : name,
+		'phone': phone
+	}
+
+	if(name.length > 1 && phone.length > 7)
+	{
+	
+		$.ajax('order.php',{
+			method:"POST",
+			data: data,
+			success: function(sdata){
+				
+				$('#ordermodal').arcticmodal();
+				$('[name=name]').val("")
+				$('[name=phone]').val("")
+			}
+		})
+	}
+
+})
+
+
+//---------------------------------------
+$(document).ready(function(){
+
+	$('.butcert').click(function(){
+	
+		
+		
+		cname = $('[name=cname]').val()
+		cphone = $('[name=cphone]').val()
+		cvideo = $('[name=cvideo]').prop("checked") ? "1" : "";
+		cphoto = $('[name=cphoto]').prop("checked") ? "1" : "";
+		cdata = {
+			'name' : cname,
+			'phone': cphone,
+			'video': cvideo,
+			'photo': cphoto
+		}
+	
+		if(cname.length > 1 && cphone.length > 7)
+		{
+		
+			$.ajax('ordercert.php',{
+				method:"POST",
+				data: cdata,
+				success: function(sdata){
+					
+					
+					$('[name=cname]').val("")
+					$('[name=cphone]').val("")
+					
+					
+					$.arcticmodal('close');
+				}
+			})
+			
+			
+			
+		}
+	
+	}) 
+
+})
+
+
+</script>
+<div style="display: none;">
+    <div class="box-modal" id="ordermodal">
+        <div class="box-modal_close arcticmodal-close">закрыть</div>
+        Спасибо за заявку, мы связжемся с Вами в ближайшее время!
+    </div>
+</div>
+
+<div style="display: none;">
+    <div class="box-modal2" id="buymodal">
+        <div class="box-modal_close arcticmodal-close">закрыть</div>
+        <form name="cert" class="form_modal" action="" method="post" >
+			<label for="text2">Ф.И.О.</label>
+			<input type="text" id="text2" name="cname"><br />
+ 			<label for="phone2">Телефон</label>
+ 			<input type="text" id="phone2" name="cphone"><br />
+ 			<input type="checkbox" id="video" name="cvideo"> 
+ 			<label for="video">видеосъемка</label>
+ 			<input type="checkbox" id="photo" name="cphoto">
+ 			<label for="photo">фотосъемка</label>
+
+ 			<input type="button" value="Заказать" class="butcert">
+	    </form>
+    </div>
+</div>
+
+
+			</div>
+		</div>
+
+		</article>
+			<div class="bg_bottom4"></div>
+
+		<article class="blok5">
+			<div class="wrap">
+			<div class="about_bg"></div>
+			<h1>О нас в цифрах</h1>
+			<div class="about">
+				<span  class="inscription">счастливых клиентов</span><br />
+				<span class="inscription1">прыжков выполнено самыми опытными инструкторами</span><br />
+				<span class="inscription2">успешной работы</span><br />
+				<span class="inscription3">перворазников проходят обучение и продолжают прыгать сами</span><br />
+				<span class="inscription4">безопасность прыжков</span>
+
+				<span  class="ins_red">985</span><br />
+				<span class="ins_red1">56000</span><br />
+				<span class="ins_red2">8</span><br />
+				<span class="ins_red3">лет</span><br />
+				<span class="ins_red4">20</span><br />
+				<span class="ins_red5">%</span><br />
+				<span class="ins_red6">100</span><br />
+				<span class="ins_red7">%</span>
+			</div>
+		</div>
+		</article>
+			<div class="bg_bottom5"></div>
+
+		<article class="blok6" id="blok6">
+			<div class="wrap">
+			<h1>Дополнительные услуги</h1>
+			<div class="services">
+				<div class="photographing">
+					<p>Фотосьемка</p>
+					<span>1000 рублей</span>
+					<button class="p_but">Заказать</button> 
+				</div>
+				<div class="videos">
+					<p>Видеосьемка</p>
+					<span>1500 рублей</span>
+					<button class="v_but">Заказать</button> 
+				</div>
+			</div>
+		</div>
+		</article>
+			<div class="bg_bottom6"></div>
+
+		<article class="blok7" id="blok7">
+			<div class="wrap">
+			<h1>Фотогалерея наших клиентов</h1>
+			<div class="photo_gallery">
+				<img src="images/pic1.png">
+				<button class="s_but" onclick="yaCounter25650857.reachGoal('GALLERY_ALL'); return true;">Смотреть все</button>
+			</div>
+		</div>
+		</article>
+
+		<article class="blok8" id="blok8">
+			<div class="wrap">
+			<h1>Как это происходит?</h1>		
+			<div class="video">    
+				<object width="600" height="400">
+				<param name="movie" value="//www.youtube.com/v/dzB3i7s4R4A?hl=ru_RU&amp;version=3&amp;rel=0"></param>
+				<param name="allowFullScreen" value="true"></param>
+				<param name="allowscriptaccess" value="always"></param>
+				<embed src="//www.youtube.com/v/dzB3i7s4R4A?hl=ru_RU&amp;version=3&amp;rel=0" type="application/x-shockwave-flash" width="600" height="400" allowscriptaccess="always" allowfullscreen="true"></embed>
+				</object>
+			</div>    
+		</div>
+		</article>
+
+		<article class="blok9" id="blok9" style="z-index:60;">
+			<div class="wrap">
+			<h1>Ваши отзывы</h1>
+			<div class="reviews">
+
+			    <div id="slidesContainer">
+			      <div class="slide">
+			      	<div class="blok_photo">
+			      		<img src="images/pic8.png" width="120" height="120" alt=" " />
+			      	</div>
+			      	<div class="block_text">
+				        <p><b>Дима Горновский</b></p>
+				        <p>Прыжок с парашютом это что-то нереальное)) Вечером все уехали довольные домой, в 19-00 уже были на Выхино, но уезжать не хотелось. Отдельный респект Сергею!</p>
+				    </div>
+			      </div>
+				  
+				 <div class="slide">
+			      	<div class="blok_photo">
+			      		<img src="images/review2.jpg" width="120" height="120" alt=" " />
+			      	</div>
+			      	<div class="block_text">
+				        <p><b>Сергей Плотников</b></p>
+				        <p>Это взрыв эмоций! После прыжка люди или продолжают прыгать дальше, или больше ни когда не делают это! Но и  те и у другие гордятся, что смогли преодолеть сомнения и страх!</p>
+				    </div>
+			      </div>
+				  
+				  <div class="slide">
+			      	<div class="blok_photo">
+			      		<img src="images/review3.jpg" width="120" height="120" alt=" " />
+			      	</div>
+			      	<div class="block_text">
+				        <p><b>Юлия Буркеева</b></p>
+				        <p >НИКОГДА я не забуду свои ощущения когда мы вываливались в невесомость. Это чуство просто  не передать. Это нужно прочувствовать и запомнить. 50 секунд свободного падения. Это на всю жизнь впечатление!</p>
+				    </div>
+			      </div>
+				  
+			      
+			    </div>					
+
+			</div>
+		</div>
+		</article>
+
+		<article class="blok10" id="blok10">
+			<div class="wrap">
+			<h1>Наши контакты</h1>
+				<div class="phone2">
+					<p><b style="font-size:18px; font-family:tahoma;">+7 916 186 98 88</b></p>
+				</div>
+
+			<div class="contacts">
+				<p>Москва, Космонавта Волкова, 10</p>
+			</div>
+		</div>
+		</article>
+			
+
+
+	</div><!-- .content -->
+
+</div><!-- .wrapper -->
+
+<footer class="footer">
+	<div class="wrap">
+
+		<div class="f_nav">
+			<ul>
+				<li><a href="#blok6">Услуги |</a></li>
+				<li><a href="#blok7">Галерея |</a></li>
+				<li><a href="#blok8">Видео |</a></li>
+				<li><a href="#blok9">Отзывы |</a></li>
+				<li><a href="#blok10">Контакты</a></li>
+			</ul>
+		</div>
+
+		<div class="soc">
+			<a href="#" class="fb"> </a>
+			<a href="#" class="yt"> </a>
+			<a href="#" class="in"> </a>
+			<a href="#" class="tw"> </a>
+
+			<div class="annot"><p>Все права защищены, 2014 г. Разработано</p></div>
+			
+		</div>
+	</div>
+	
+</footer><!-- .footer -->
+		<div id="myModal" class="reveal-modal">
+			<h1>Спасибо за заказ</h1>
+			
+			<a class="close-reveal-modal">&#215;</a>
+		</div>
+		
+		
+		<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter25650857 = new Ya.Metrika({id:25650857,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/25650857" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53585916-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+$('.button_buy').click(function(){
+
+	$('#buymodal').arcticmodal();
+
+})
+
+$('.p_but').click(function(){
+
+	$('#buymodal').arcticmodal();
+
+})
+
+$('.v_but').click(function(){
+
+	$('#buymodal').arcticmodal();
+
+})
+</script>
+		
+</body>
+</html>
